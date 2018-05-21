@@ -99,6 +99,7 @@ docker pull ubuntu:latest
 # The following tests are skipped:
 #
 # call_cache_capoeira_local: fails on task 'read_files_without_docker' since the 'docker' runtime key is required for this backend
+# draft3_call_cache_capoeira_local: same as above
 # lots_of_inputs:            Funnel mounts in each input separately, this task surpasses the docker limit for volumes
 # no_new_calls:              TES does not support checking job status after restart, and cannot tell if shouldSucceed is done or failed
 # non_root_specified_user:   TES doesn't support switching users in the image
@@ -109,6 +110,7 @@ centaur/test_cromwell.sh \
 -g \
 -c ${TES_CENTAUR_CONF} \
 -e call_cache_capoeira_local \
+-e draft3_call_cache_capoeira_local \
 -e lots_of_inputs \
 -e no_new_calls \
 -e non_root_default_user \
